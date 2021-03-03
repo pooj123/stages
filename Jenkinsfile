@@ -9,16 +9,13 @@ pipeline {
         CI = 'true' 
     }
     stages {
-        // stage('Build') {
-        //     steps {
-        //         sh 'npm install'
-        //     }
-        // }
+        stage('Build') {
+            steps {
+                sh 'npm install'
+            }
+        }
         stage('Test') {
             steps {
-                sh 'node -v'
-                sh 'npm prune'
-                sh 'npm install'
                 sh 'npm test'
             }
 
