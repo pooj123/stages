@@ -19,7 +19,7 @@ pipeline {
                 sh 'npm test'
             }  
         }
-        stage ('Static Analysis') {
+        stage ('Linting') {
             steps {
                 sh 'npm install'
                 sh 'npm test'
