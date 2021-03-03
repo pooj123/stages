@@ -21,12 +21,11 @@ pipeline {
         }
         stage ('Static Analysis') {
             steps {
-                sh ' ./node_modules/eslint/bin/eslint.js -f checkstyle src > eslint.xml'
-            }
-            post {
-                always {
-                    recordIssues enabledForFailure: true, aggregatingResults: true, tool: checkStyle(pattern: 'eslint.xml')
-                }
+                sh 'npm install'
+                sh 'npm test'
+                echo 'Linting Started'
+                sh 'npm run lint'
+                echo 'Linting Ended'
             }
         }
     }
