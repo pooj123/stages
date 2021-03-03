@@ -15,17 +15,14 @@ pipeline {
             }
         }
         stage('Test') {
-            // steps {
-            //     sh 'node --version'
-            // }
-            env.NODE_ENV = "test"
+            steps {
+                sh 'node -v'
+                sh 'npm prune'
+                sh 'npm install'
+                sh 'npm test'
+            }
 
-            print "Environment will be : ${env.NODE_ENV}"
-
-            sh 'node -v'
-            sh 'npm prune'
-            sh 'npm install'
-            sh 'npm test'
+            
         }
 
     }
