@@ -21,11 +21,7 @@ pipeline {
         }
         stage ('Linting') {
             steps {
-                sh 'npm install'
-                sh 'npm test'
-                echo 'Linting Started'
                 sh 'npm run lint'
-                echo 'Linting Ended'
             }
         }
     }
