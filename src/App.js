@@ -15,8 +15,7 @@ function App() {
         >
           Learn React with this sample project
         </a>
-        <p>Hiiiii</p>
-        <b>How r u. pleassssssseeeee worrrkkkkkk</b>
+        <p>Hope is the only constant</p>
       </header>
     </div>
   );
